@@ -1,8 +1,3 @@
-/*
- * PURPOSE: Controller of the application. Handles incoming API calls, routes them to the correct service, and
- *          returns any requested information.
- * AUTHOR: DAVID TURNBOUGH
- */
 package turnbough.accounts.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +7,9 @@ import turnbough.accounts.services.AccountService;
 
 import java.util.List;
 
-/*
- * CLASS: Account Controller
+/**
+ *
+ * @author David Turnbough
  */
 @RestController
 @RequestMapping("/accounts")
