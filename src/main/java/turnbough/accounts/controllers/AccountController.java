@@ -1,6 +1,5 @@
 package turnbough.accounts.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import turnbough.accounts.models.Account;
 import turnbough.accounts.services.AccountService;
@@ -8,6 +7,7 @@ import turnbough.accounts.services.AccountService;
 import java.util.List;
 
 /**
+ *
  *
  * @author David Turnbough
  */
@@ -18,11 +18,26 @@ public class AccountController
 	/*
 	 * VARIABLES
 	 */
-	@Autowired
-	AccountService accountService;
+	private final AccountService accountService;
+
+	/**
+	 * Constructor
+	 * Injection is handled automatically via constructor-based dependency injection.
+	 *
+	 * @param accountService the business service layer responsible for executing account operations
+	 */
+	public AccountController(AccountService accountService)
+	{
+		this.accountService = accountService;
+	}
 
 	/*
 	 * GET MAPPING
+	 */
+	/**
+	 * Retrieves a list of active accounts in the system.
+	 *
+	 * @return List of Account objects
 	 */
 	@GetMapping("/allAccounts")
 	public List<Account> getAllAccounts()
