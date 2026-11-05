@@ -110,6 +110,21 @@ public class AccountService
 	}
 
 	/*
+	* Put Services
+	 */
+
+	/**
+	 *
+	 *
+	 * @param account
+	 * @return
+	 */
+	public Account updateAccount(Account account)
+	{
+		return accountRepository.save(account);
+	}
+
+	/*
 	 * DELETE SERVICES
 	 */
 	// Purpose: Deletes an account with the given account id. Will only attempt to delete the account if it exists.
@@ -148,5 +163,6 @@ public class AccountService
 
 		return sanatizedInput;
 	}
+
 
 }

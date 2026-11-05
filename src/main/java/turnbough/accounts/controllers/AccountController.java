@@ -100,13 +100,19 @@ public class AccountController
 		return accountService.createAccount(account);
 	}
 
-	/*
-	* PUT MAPPING
+	// Put Mapping
+	/**
+	 * Updates an existing account in the system.
+	 *
+	 * @param account
+	 * @return
 	 */
+	public Account updateAccount(@RequestBody Account account)
+	{
+		//TODO: Make sure the account exists, if not reject it
 
-	//TODO: Create a method to update an account
-	//TODO: Change account attributes; account name, address, phone number, etc
-
+		return accountService.updateAccount(account);
+	}
 
 	/*
 	* DELETE MAPPING
